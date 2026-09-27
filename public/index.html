@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI News — Günün Yapay Zekâ Haberleri</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">AI</span>
+      <div>
+        <h1>AI News</h1>
+        <p id="meta">Yükleniyor…</p>
+      </div>
+    </div>
+    <div class="actions">
+      <input id="search" type="search" placeholder="Haberlerde ara…" autocomplete="off" />
+      <button id="refresh" title="Kaynakları yeniden çek">Yenile</button>
+      <button id="theme" title="Tema değiştir">◐</button>
+    </div>
+  </header>
+
+  <nav id="filters" class="filters"></nav>
+
+  <main id="feed" class="feed" aria-busy="true"></main>
+
+  <footer class="footer">
+    <span id="sources-status"></span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
