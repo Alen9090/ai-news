@@ -35,7 +35,9 @@ export async function fetchDailyDevChannel(channel, { limit = 40, timeoutMs = 15
       // /r/<id> redirects to the original article instead of the daily.dev page.
       url: REDIRECT + h.post.id,
       body: stripHtml(h.post.summary || h.post.contentHtml || ""),
-      image: h.post.source?.image || "",
+      // daily.dev only exposes the publisher's logo, not an article image, so it
+      // is shown as a small avatar rather than stretched into a cover photo.
+      logo: h.post.source?.image || "",
       author: h.post.source?.name || h.post.domain || "",
       publishedAt: h.highlightedAt || null,
       significance: h.significance || null,

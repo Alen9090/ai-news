@@ -88,6 +88,16 @@ function card(item) {
 
   const top = document.createElement("div");
   top.className = "card-top";
+  if (item.logo) {
+    const avatar = document.createElement("img");
+    avatar.className = "avatar";
+    avatar.src = item.logo;
+    avatar.alt = "";
+    avatar.loading = "lazy";
+    avatar.referrerPolicy = "no-referrer";
+    avatar.addEventListener("error", () => avatar.remove());
+    top.append(avatar);
+  }
   const src = document.createElement("span");
   src.className = "src";
   src.textContent = item.source;
@@ -112,7 +122,7 @@ function card(item) {
 
   const summary = document.createElement("p");
   summary.className = "summary";
-  summary.textContent = item.summary || "Özet bulunamadı.";
+  summary.textContent = item.summary || "";
 
   const foot = document.createElement("div");
   foot.className = "card-foot";
