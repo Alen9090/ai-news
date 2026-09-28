@@ -4,3 +4,10 @@ node_modules/
 .DS_Store
 *.log
 .claude/
+
+# Screenshots dropped into the project root are never app assets, and they
+# routinely contain personal data. Ignore them so they cannot be committed by
+# accident. Images that belong to the app live under public/ and stay tracked.
+/*.png
+/*.jpg
+/*.jpeg
